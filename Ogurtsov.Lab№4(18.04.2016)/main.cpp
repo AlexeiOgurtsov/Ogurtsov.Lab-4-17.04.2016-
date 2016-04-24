@@ -12,7 +12,7 @@ double UnIntegralFunction(double);
 int main()
 {
 	double initsegm, endsegm, eps, n = 0;
-	IsDataValid(eps, initsegm, endsegm, n);
+	IsDataValid(initsegm, endsegm, eps, n);
 	Formula formula = RightRectangle;
 	cout << "Integral from Right Rectangle : " << endl;
 	cout << DoubleConversion(eps, initsegm, endsegm, n, formula) << endl;
@@ -75,7 +75,7 @@ double LeftRectangle(double LowerLimit, double UpperLimit, unsigned k)
 
 double UnIntegralFunction(double x)
 {
-	return 1/x;
+	return 1 / x;
 }
 
 void IsDataValid(double &initsegm, double &endsegm, double &eps, double &n)
@@ -106,7 +106,7 @@ void IsDataValid(double &initsegm, double &endsegm, double &eps, double &n)
 	}
 }
 
-double DoubleConversion(double eps, double initsegm, double endsegm, int n , Formula formula)
+double DoubleConversion(double eps, double initsegm, double endsegm, int n, Formula formula)
 {
 	double PreviosIntegral = 0, NextIntegral = 1;
 	while (fabs(PreviosIntegral - NextIntegral) > eps)
